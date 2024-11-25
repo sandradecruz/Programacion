@@ -44,22 +44,22 @@ public class deCruz_Tordable_Sandra {
     public boolean esValido(String campo){
     
         if (campo.isEmpty()) {
-            System.out.println("El campo no puede estar vacío. Inténtelo de nuevo.");
+            System.out.println("El campo no puede estar vacÃ­o. IntÃ©ntelo de nuevo.");
             return false;
-        } else if (campo.matches(".*\\d.*")) { // Contiene números
-            System.out.println("El campo no puede contener números. Inténtelo de nuevo.");
+        } else if (campo.matches(".*\\d.*")) { // Contiene nÃºmeros
+            System.out.println("El campo no puede contener nÃºmeros. IntÃ©ntelo de nuevo.");
             return false;
         } else if (campo.length() < 3) { // Menor que 3 caracteres
-            System.out.println("El campo tiene que tener como mínimo 3 letras. Inténtelo de nuevo.");
+            System.out.println("El campo tiene que tener como mÃ­nimo 3 letras. IntÃ©ntelo de nuevo.");
             return false;
         } else if (contieneCaracteresEspeciales(campo)) { // Contiene caracteres especiales
-            System.out.println("El campo no puede contener caracteres especiales. Inténtelo de nuevo.");
+            System.out.println("El campo no puede contener caracteres especiales. IntÃ©ntelo de nuevo.");
             return false;
         }
         return true;
     }
     
-    //(1)Metodo de la contraseña mediante metodos mecanicos.
+    //(1)Metodo de la contraseÃ±a mediante metodos mecanicos.
     public String contrasenaMecanica (){
         String contrasenaMecanica="";
         
@@ -88,7 +88,7 @@ public class deCruz_Tordable_Sandra {
             
             char charFinal = caracter.charAt(0); //Convertimos a char  para utilizarlo sin problemas.
             
-            //Lanzamiento de moneda para la elección final del caracter.
+            //Lanzamiento de moneda para la elecciÃ³n final del caracter.
             if (Character.isLetter(charFinal)) { //En caso de que sea una letra
                 if (random.nextBoolean()) {
                     charFinal = Character.toUpperCase(charFinal);
@@ -113,31 +113,31 @@ public class deCruz_Tordable_Sandra {
             }
             contrasenaMecanica=contrasenaMecanica + charFinal;
         }
-        //Devolvemos la contraseña resultante.
+        //Devolvemos la contraseÃ±a resultante.
         return contrasenaMecanica;
     }
     
-    //(2)Metodo de la contraseña mediante algoritmos.
+    //(2)Metodo de la contraseÃ±a mediante algoritmos.
     public String contrasenaAlgoritmo (){
         String contrasenaAlgoritmo="";
-        String caracteres="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%/&()="; //Todos los caracteres validos para generar la contraseña
-        int longitudContrasena2 = random.nextInt(5) + 4; //Generamos la longitud de contraseña aleatoria entre 4 y 8.
+        String caracteres="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%/&()="; //Todos los caracteres validos para generar la contraseÃ±a
+        int longitudContrasena2 = random.nextInt(5) + 4; //Generamos la longitud de contraseÃ±a aleatoria entre 4 y 8.
         
         for (int i = 0; i < longitudContrasena2; i++) {
             // Seleccionamos un indice aleatorio de la cadena de caracteres.
             int indiceAleatorio = sr.nextInt(caracteres.length());
             contrasenaAlgoritmo =contrasenaAlgoritmo + caracteres.charAt(indiceAleatorio);
         }
-        //Devolvemos la contraseña resultante. 
+        //Devolvemos la contraseÃ±a resultante. 
         return contrasenaAlgoritmo;
     }   
     
-    //(3)Metodo de la contraseña mediante la idea propuesta. 
+    //(3)Metodo de la contraseÃ±a mediante la idea propuesta. 
     public String contrasenaIdea (String nombre, String apellido1, String numdni, String fechaNacimiento){
         String contrasenaIdea="";
         
         
-        //Creamos un aleatorio que indique la longitud de la contraseña.
+        //Creamos un aleatorio que indique la longitud de la contraseÃ±a.
         int longitudContrasena3=random.nextInt(5) + 4; 
         int indice=0;
         while(indice<longitudContrasena3){
@@ -147,33 +147,33 @@ public class deCruz_Tordable_Sandra {
             int resto = numeros % 23;
             char letra=letras.charAt(resto);
 
-            //Primera letra del nombre en mayúsculas.
+            //Primera letra del nombre en mayÃºsculas.
             if (indice < longitudContrasena3) {
                 contrasenaIdea=contrasenaIdea+Character.toUpperCase(nombre.charAt(0));
                 indice++;
             }
             
-            //Última letra del primer apellido en minúsculas.
+            //Ãšltima letra del primer apellido en minÃºsculas.
             if (indice < longitudContrasena3) {
                 int ultimaLetra=apellido1.length()-1;
                 contrasenaIdea=contrasenaIdea+Character.toLowerCase(apellido1.charAt(ultimaLetra));
                 indice++;
             }    
      
-            //Dos últimas cifras del DNI.
+            //Dos Ãºltimas cifras del DNI.
             if (indice < longitudContrasena3) {
                 for(int i=6;i<8 && indice < longitudContrasena3;i++){
                     contrasenaIdea=contrasenaIdea+numdni.charAt(i);
                 indice++;    
                 }
             }
-            //Letra de dígito de control del DNI en mayúsculas.
+            //Letra de dÃ­gito de control del DNI en mayÃºsculas.
             if (indice < longitudContrasena3) {
                 contrasenaIdea=contrasenaIdea+letra;
                 indice++;
             }
             
-            //Dos últimas cifras del año de nacimiento.
+            //Dos Ãºltimas cifras del aÃ±o de nacimiento.
             if (indice < longitudContrasena3) {
                 for(int a=8;a<10 && indice < longitudContrasena3;a++){
                     contrasenaIdea=contrasenaIdea+fechaNacimiento.charAt(a);
@@ -181,7 +181,7 @@ public class deCruz_Tordable_Sandra {
                 }
             }
             
-            //Símbolo aleatorio de entre los que aparecen en un teclado estándar encima de los números (0-9). 
+            //SÃ­mbolo aleatorio de entre los que aparecen en un teclado estÃ¡ndar encima de los nÃºmeros (0-9). 
             String simbolos = "!@#$%/&()="; //String de los simbolos del 0 al 9.
             if (indice < longitudContrasena3) {
                 int indiceAleatorio = random.nextInt(simbolos.length()); //Solicitamos un numero random correspondiente a la longitud de la cadena.
@@ -190,12 +190,12 @@ public class deCruz_Tordable_Sandra {
                 indice++;
             }
         }
-        //Devolvemos la contraseña final.
+        //Devolvemos la contraseÃ±a final.
         return contrasenaIdea;
     }
     
     
-    //Comprobamos si la contraseña resultante tiene caracteres especiales.
+    //Comprobamos si la contraseÃ±a resultante tiene caracteres especiales.
     public boolean contieneCaracteresEspeciales(String contrasena) {
         String caracteresEspeciales = "!@#$%/&()=-_.*";
         for (int i = 0; i < contrasena.length(); i++) {
@@ -237,16 +237,13 @@ public class deCruz_Tordable_Sandra {
     return false;
     }
     
-    //Metodo para identificar que tan segura es la contraseña.
+    //Metodo para identificar que tan segura es la contraseÃ±a.
     public String esSegura(String contrasena){
         //Color de as letras.
         String RESET = "\u001B[0m";
         String ROJO = "\u001B[31m";
         String AMARILLO = "\u001B[33m";
         String VERDE = "\u001B[32m";
-        
-        //String que contiene todos los caracteres especiales posibles.
-        
         
         String seguridad;
         if(contrasena.length()<6){
@@ -298,7 +295,7 @@ public class deCruz_Tordable_Sandra {
                     System.out.println("El DNI no puede contener caracteres especiales. Intentelo de nuevo.");
                     valido=false;
                 }else{
-                    System.out.println("El DNI debe contener 8 dígitos. Intentelo de nuevo.");
+                    System.out.println("El DNI debe contener 8 dÃ­gitos. Intentelo de nuevo.");
                     valido=false;
                 }
         } while (!valido);
@@ -335,14 +332,14 @@ public class deCruz_Tordable_Sandra {
         System.out.println("Su usuario es: "+app.crearUsuario(nombre, apellido1, apellido2));
         
         
-        //Mostramos la primera contraseña
-            System.out.println("La primera contraseña generada es: "+contrasena1+" y es "+app.esSegura(contrasena1)+".");
+        //Mostramos la primera contraseÃ±a
+            System.out.println("La primera contraseÃ±a generada es: "+contrasena1+" y es "+app.esSegura(contrasena1)+".");
 
-        //Mostramos la segunda contraseña
-            System.out.println("La segunda contraseña generada es: "+contrasena2+" y es "+app.esSegura(contrasena2)+".");
+        //Mostramos la segunda contraseÃ±a
+            System.out.println("La segunda contraseÃ±a generada es: "+contrasena2+" y es "+app.esSegura(contrasena2)+".");
         
-        //Mostramos la tercera contraseña
-            System.out.println("La tercera contraseña generada es: "+contrasena3+" y es "+app.esSegura(contrasena3)+".");
+        //Mostramos la tercera contraseÃ±a
+            System.out.println("La tercera contraseÃ±a generada es: "+contrasena3+" y es "+app.esSegura(contrasena3)+".");
         
         System.out.println("----------------");
     }
