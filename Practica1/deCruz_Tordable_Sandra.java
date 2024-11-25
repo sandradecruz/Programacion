@@ -257,7 +257,6 @@ public class deCruz_Tordable_Sandra {
         return seguridad;
     }
 
-    
     public static void main(String[] args) {
         deCruz_Tordable_Sandra app=new deCruz_Tordable_Sandra();
         
