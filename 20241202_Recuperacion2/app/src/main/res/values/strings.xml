@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name" translatable="false">MayorPablo</string>
+    <string name="avanza">Avanza</string>
+    <string name="nombre">Nombre:</string>
+    <string name="sexo">Sexo:</string>
+    <string name="hombre">Hombre</string>
+    <string name="mujer">Mujer</string>
+    <string name="a_adir">Añadir</string>
+</resources>
